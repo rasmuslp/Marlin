@@ -432,7 +432,8 @@ bool Probe::is_exist() {
 
     return bltouch.is_exist();
   #else
-    #error "probe.is_exist() has not been implemented except Bltouch"
+    #warning "probe.is_exist() has not been implemented except Bltouch"
+    return true;
   #endif
 }
 
