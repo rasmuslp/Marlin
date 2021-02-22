@@ -6,9 +6,12 @@ M117 Pre-heating the extruder!
 M104 S160                        ; Start warming extruder to 160
 G28                              ; Home all axes
 M117 Auto bed-level GO!
-G29                              ; Auto bed-level (BL-Touch)
+; G29                              ; Auto bed-level (BL-Touch)
+G29 L1                           ; Load mesh in slot 1
+G29 A                            ; Activate 
 G92 E0                           ; Reset Extruder
 M117 Getting the extruder up to temp!
+G28 X Y                          ; Move hotend outside bed finalising heatup
 M104 S{material_print_temperature_layer_0}    ; Set Extruder temperature
 M109 S{material_print_temperature_layer_0}    ; Wait for Extruder temperature
 G1 Z2.0 F3000                    ; Move Z Axis up little to prevent scratching of Heat Bed
